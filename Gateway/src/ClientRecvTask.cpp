@@ -136,11 +136,13 @@ void ClientRecvTask::run(){
 		bool eventSetFlg = true;
 
 		if(_network->getResponse(resp)){
+		    std::cout << "Get Response" << std::endl;
 			Event* ev = new Event();
 			ClientNode* clnode = _res->getClientList()->getClient(resp->getClientAddress64(),
 					                                              resp->getClientAddress16());
 
 			if(!clnode){
+                std::cout << "No Cleint Node" << std::endl;
 				if(resp->getMsgType() == MQTTSN_TYPE_CONNECT){
 
 				#ifdef NETWORK_XBEE
@@ -180,6 +182,7 @@ void ClientRecvTask::run(){
 					eventSetFlg = false;
 				}
 			}else{
+                std::cout << "Cleint Node" << std::endl;
 				if (resp->getMsgType() == MQTTSN_TYPE_CONNECT){
                     std::cout << "CONNECT" << std::endl;
 					MQTTSnConnect* msg = new MQTTSnConnect();
