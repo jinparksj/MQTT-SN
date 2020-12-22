@@ -67,10 +67,11 @@ void ClientRecvTask::run(){
 	bool secure = false;   // TCP
 
 #ifdef NETWORK_XBEE
-
+    std::cout << "XBEE" << std::endl;
 	if(_res->getParam("BaudRate",param) == 0){
 
 		int val = atoi(param);
+		std::cout << "baudrate : " <<  val << std::endl;
 		switch(val){
 		case 9600:
 			config.baudrate = B9600;
@@ -169,6 +170,7 @@ void ClientRecvTask::run(){
 					node->setClientRecvMessage(msg);
 					ev->setClientRecvEvent(node);
 				}else if(resp->getMsgType() == MQTTSN_TYPE_SEARCHGW){
+                    std::cout << "SEARCHGW" << std::endl;
 					MQTTSnSearchGw* msg = new MQTTSnSearchGw();
 					msg->absorb(resp);
 					ev->setEvent(msg);
@@ -178,6 +180,7 @@ void ClientRecvTask::run(){
 				}
 			}else{
 				if (resp->getMsgType() == MQTTSN_TYPE_CONNECT){
+                    std::cout << "CONNECT" << std::endl;
 					MQTTSnConnect* msg = new MQTTSnConnect();
 					msg->absorb(resp);
 					clnode->setClientRecvMessage(msg);
@@ -185,78 +188,91 @@ void ClientRecvTask::run(){
 					ev->setClientRecvEvent(clnode);
 
 				}else if(resp->getMsgType() == MQTTSN_TYPE_PUBLISH){
+                    std::cout << "PUBLISH" << std::endl;
 					MQTTSnPublish* msg = new MQTTSnPublish();
 					msg->absorb(resp);
 					clnode->setClientRecvMessage(msg);
 					ev->setClientRecvEvent(clnode);
 
 				}else if(resp->getMsgType() == MQTTSN_TYPE_PUBACK){
+                    std::cout << "PUBACK" << std::endl;
 					MQTTSnPubAck* msg = new MQTTSnPubAck();
 					msg->absorb(resp);
 					clnode->setClientRecvMessage(msg);
 					ev->setClientRecvEvent(clnode);
 
 				}else if(resp->getMsgType() == MQTTSN_TYPE_PUBREL){
+                    std::cout << "PUBREL" << std::endl;
 					MQTTSnPubRel* msg = new MQTTSnPubRel();
 					msg->absorb(resp);
 					clnode->setClientRecvMessage(msg);
 					ev->setClientRecvEvent(clnode);
 
 				}else if (resp->getMsgType() == MQTTSN_TYPE_CONNECT){
+                    std::cout << "CONNECT" << std::endl;
 					MQTTSnConnect* msg = new MQTTSnConnect();
 					msg->absorb(resp);
 					clnode->setClientRecvMessage(msg);
 					ev->setClientRecvEvent(clnode);
 
 				}else if (resp->getMsgType() == MQTTSN_TYPE_PINGREQ){
+                    std::cout << "PINGREQ" << std::endl;
 					MQTTSnPingReq* msg = new MQTTSnPingReq();
 					msg->absorb(resp);
 					clnode->setClientRecvMessage(msg);
 					ev->setClientRecvEvent(clnode);
 
 				}else if (resp->getMsgType() == MQTTSN_TYPE_DISCONNECT){
+                    std::cout << "DISCONNECT" << std::endl;
 					MQTTSnDisconnect* msg = new MQTTSnDisconnect();
 					msg->absorb(resp);
 					clnode->setClientRecvMessage(msg);
 					ev->setClientRecvEvent(clnode);
 
 				}else if (resp->getMsgType() == MQTTSN_TYPE_REGISTER){
+                    std::cout << "REGISTER" << std::endl;
 					MQTTSnRegister* msg = new MQTTSnRegister();
 					msg->absorb(resp);
 					clnode->setClientRecvMessage(msg);
 					ev->setClientRecvEvent(clnode);
 
 				}else if (resp->getMsgType() == MQTTSN_TYPE_REGACK){
+                    std::cout << "REGACK" << std::endl;
 					MQTTSnRegAck* msg = new MQTTSnRegAck();
 					msg->absorb(resp);
 					clnode->setClientRecvMessage(msg);
 					ev->setClientRecvEvent(clnode);
 
 				}else if (resp->getMsgType() == MQTTSN_TYPE_UNSUBSCRIBE){
+                    std::cout << "UNSUBSCRIBE" << std::endl;
 					MQTTSnUnsubscribe* msg = new MQTTSnUnsubscribe();
 					msg->absorb(resp);
 					clnode->setClientRecvMessage(msg);
 					ev->setClientRecvEvent(clnode);
 
 				}else if (resp->getMsgType() == MQTTSN_TYPE_SUBSCRIBE){
+                    std::cout << "SUBSCRIBE" << std::endl;
 					MQTTSnSubscribe* msg = new MQTTSnSubscribe();
 					msg->absorb(resp);
 					clnode->setClientRecvMessage(msg);
 					ev->setClientRecvEvent(clnode);
 
 				}else if (resp->getMsgType() == MQTTSN_TYPE_WILLTOPIC){
+                    std::cout << "WILLTOPIC" << std::endl;
 					MQTTSnWillTopic* msg = new MQTTSnWillTopic();
 					msg->absorb(resp);
 					clnode->setClientRecvMessage(msg);
 					ev->setClientRecvEvent(clnode);
 
 				}else if (resp->getMsgType() == MQTTSN_TYPE_WILLMSG){
+                    std::cout << "WILLMSG" << std::endl;
 					MQTTSnWillMsg* msg = new MQTTSnWillMsg();
 					msg->absorb(resp);
 					clnode->setClientRecvMessage(msg);
 					ev->setClientRecvEvent(clnode);
 
 				}else if(resp->getMsgType() == MQTTSN_TYPE_SEARCHGW){
+                    std::cout << "SEARCHGW" << std::endl;
 					MQTTSnSearchGw* msg = new MQTTSnSearchGw();
 					clnode->disconnected();
 					msg->absorb(resp);
