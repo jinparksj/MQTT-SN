@@ -28,7 +28,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="08252e73-c727-4b89-8d71-4efd593f2302" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Gateway/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Gateway/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/conf/param.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +43,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1m1J4qlkxyyTXKXgACOIugiZl2n" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -68,7 +72,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1608654975392</updated>
-      <workItem from="1608654976750" duration="3444000" />
+      <workItem from="1608654976750" duration="4233000" />
     </task>
     <servers />
   </component>
@@ -87,9 +91,14 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="702" y="-1000" width="1215" height="823" key="find.popup" timestamp="1608656172713">
-      <screen x="-261" y="-1440" width="2560" height="1400" />
+    <state x="703" y="139" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1608664816147">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="703" y="139" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040/-261.-1440.2560.1400/2299.-1085.1536.824@0.0.1920.1040" timestamp="1608664816147" />
+    <state x="722" y="327" width="912" height="612" key="find.popup" timestamp="1608664834101">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="702" y="-1000" width="1215" height="823" key="find.popup/0.0.1920.1040/-261.-1440.2560.1400/2299.-1085.1536.824@-261.-1440.2560.1400" timestamp="1608656172713" />
+    <state x="722" y="327" width="912" height="612" key="find.popup/0.0.1920.1040/-261.-1440.2560.1400/2299.-1085.1536.824@0.0.1920.1040" timestamp="1608664834101" />
   </component>
 </project>
