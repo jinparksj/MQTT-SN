@@ -55,7 +55,8 @@
 #include <sys/shm.h>
 
 #define TOMYFRAME_PARAM_MAX     128
-#define TOMYFRAME_CONFIG_FILE      "/usr/local/etc/tomygateway/config/param.conf"
+//#define TOMYFRAME_CONFIG_FILE      "/usr/local/etc/tomygateway/config/param.conf"
+#define TOMYFRAME_CONFIG_FILE      "../../../conf/param.conf"
 
 #define TOMYFRAME_RINGBUFFER_KEY   "/usr/local/etc/tomygateway/config/ringbuffer.key"
 #define TOMYFRAME_RB_MUTEX_KEY     "/usr/local/etc/tomygateway/config/rbmutex.key"
