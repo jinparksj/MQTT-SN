@@ -145,6 +145,7 @@ void ClientRecvTask::run(){
 
 				#ifdef NETWORK_XBEE
 					ClientNode* node = _res->getClientList()->createNode(secure, resp->getClientAddress64(),0);
+                    std::cout << "XBEE Node Connect" << std::endl;
 				#endif
 				#ifdef NETWORK_UDP
 					ClientNode* node = _res->getClientList()->createNode(secure, resp->getClientAddress64(),
