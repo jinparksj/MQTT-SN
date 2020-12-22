@@ -143,11 +143,11 @@ void ClientRecvTask::run(){
 
 			if(!clnode){
                 std::cout << "No Cleint Node" << std::endl;
-                std::cout << "Msg Type : " << resp -> getMsgType() << std::endl;
+                printf("Msg Type : %d\n", resp -> getMsgType());
 				if(resp->getMsgType() == MQTTSN_TYPE_CONNECT){
 
 				#ifdef NETWORK_XBEE
-					ClientNode* node = _res->getClientList()->createNode(secure, resp->getClientAddress64(),0);
+					ClientNode* node = _res->getClientList()->createNode(secure, resp->getClientAddress64(), 0);
                     std::cout << "XBEE Node Connect" << std::endl;
 				#endif
 				#ifdef NETWORK_UDP

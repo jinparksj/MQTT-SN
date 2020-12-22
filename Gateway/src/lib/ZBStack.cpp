@@ -235,7 +235,7 @@ uint8_t NWResponse::getApiId(){
 }
 
 uint8_t NWResponse::getMsgType(){
-    std::cout << getPayloadPtr()[1] << std::endl;
+    printf("getPayloadPtr()[1] : %d\n": getPayloadPtr()[1]);
   return getPayloadPtr()[1];
 }
 
