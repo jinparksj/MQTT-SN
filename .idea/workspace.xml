@@ -30,7 +30,6 @@
     <list default="true" id="08252e73-c727-4b89-8d71-4efd593f2302" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Gateway/src/lib/ProcessFramework.h" beforeDir="false" afterPath="$PROJECT_DIR$/Gateway/src/lib/ProcessFramework.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LogMonitor/src/lib/ProcessFramework.h" beforeDir="false" afterPath="$PROJECT_DIR$/LogMonitor/src/lib/ProcessFramework.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +72,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1608654975392</updated>
-      <workItem from="1608654976750" duration="4368000" />
+      <workItem from="1608654976750" duration="5039000" />
     </task>
     <servers />
   </component>
@@ -96,10 +95,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="703" y="139" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040/-261.-1440.2560.1400/2299.-1085.1536.824@0.0.1920.1040" timestamp="1608664816147" />
-    <state x="722" y="327" width="912" height="612" key="find.popup" timestamp="1608665011101">
+    <state x="722" y="327" width="912" height="612" key="find.popup" timestamp="1608665231782">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="702" y="-1000" width="1215" height="823" key="find.popup/0.0.1920.1040/-261.-1440.2560.1400/2299.-1085.1536.824@-261.-1440.2560.1400" timestamp="1608656172713" />
-    <state x="722" y="327" width="912" height="612" key="find.popup/0.0.1920.1040/-261.-1440.2560.1400/2299.-1085.1536.824@0.0.1920.1040" timestamp="1608665011101" />
+    <state x="722" y="327" width="912" height="612" key="find.popup/0.0.1920.1040/-261.-1440.2560.1400/2299.-1085.1536.824@0.0.1920.1040" timestamp="1608665231782" />
   </component>
 </project>
