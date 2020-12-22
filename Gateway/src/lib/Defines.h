@@ -53,8 +53,8 @@
 /*=================================
  *    CPU TYPE
  ==================================*/
-#define CPU_LITTLEENDIANN
-//#define CPU_BIGENDIANN
+//#define CPU_LITTLEENDIANN
+#define CPU_BIGENDIANN
 
 /*=================================
  *    Debug LOG
