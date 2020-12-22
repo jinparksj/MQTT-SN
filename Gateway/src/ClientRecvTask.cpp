@@ -143,6 +143,7 @@ void ClientRecvTask::run(){
 
 			if(!clnode){
                 std::cout << "No Cleint Node" << std::endl;
+                std::cout << "Msg Type : " << resp -> getMsgType() << std::endl;
 				if(resp->getMsgType() == MQTTSN_TYPE_CONNECT){
 
 				#ifdef NETWORK_XBEE
