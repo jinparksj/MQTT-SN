@@ -271,14 +271,15 @@ void GatewayControlTask::run(){
 void GatewayControlTask::handleSnPublish(Event* ev, ClientNode* clnode, MQTTSnMessage* msg){
 
 	LOGWRITE(BLUE_FORMAT2, currentDateTime(), "PUBLISH", LEFTARROW, clnode->getNodeId()->c_str(), msgPrint(msg));
-
+    D_NWSTACKW("Publish Handle Function\n");
 	MQTTSnPublish* sPublish = new MQTTSnPublish();
 	MQTTPublish* mqMsg = new MQTTPublish();
 	sPublish->absorb(msg);
 
 	Topic* tp = clnode->getTopics()->getTopic(sPublish->getTopicId());
-
+    printf("Flags : %d\n", (int)sPublish->getFlags());
 	if(tp || ((sPublish->getFlags() && MQTTSN_TOPIC_TYPE) == MQTTSN_TOPIC_TYPE_SHORT)){
+        D_NWSTACKW("PH: Topic Type Short\n");
 		if(tp){
 			mqMsg->setTopic(tp->getTopicName());
 		}else{
@@ -314,7 +315,9 @@ void GatewayControlTask::handleSnPublish(Event* ev, ClientNode* clnode, MQTTSnMe
 		_res->getBrokerSendQue()->post(ev1);
 
 	}else{
+        D_NWSTACKW("PH: No Topic Type Short\n");
 		if(sPublish->getMsgId()){
+            D_NWSTACKW("PH: No Topic Type Short\n");
 			MQTTSnPubAck* sPuback = new MQTTSnPubAck();
 			sPuback->setMsgId(sPublish->getMsgId());
 			sPuback->setTopicId(sPublish->getTopicId());

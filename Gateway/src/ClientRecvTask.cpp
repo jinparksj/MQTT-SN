@@ -67,11 +67,13 @@ void ClientRecvTask::run(){
 	bool secure = false;   // TCP
 
 #ifdef NETWORK_XBEE
-    std::cout << "XBEE" << std::endl;
+    D_NWSTACKW("XBEE\n");
+
 	if(_res->getParam("BaudRate",param) == 0){
 
 		int val = atoi(param);
-		std::cout << "baudrate : " <<  val << std::endl;
+        D_NWSTACKW("baudrate : ");
+        D_NWSTACKF("%d\n", val);
 		switch(val){
 		case 9600:
 			config.baudrate = B9600;

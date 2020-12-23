@@ -29,7 +29,8 @@
   <component name="ChangeListManager">
     <list default="true" id="08252e73-c727-4b89-8d71-4efd593f2302" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gateway/src/ClientSendTask.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Gateway/src/ClientSendTask.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gateway/src/ClientRecvTask.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Gateway/src/ClientRecvTask.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gateway/src/GatewayControlTask.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Gateway/src/GatewayControlTask.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,11 +57,12 @@
     <property name="cf.first.check.clang-format" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunManager">
-    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
-        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
   </component>
@@ -72,7 +74,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1608654975392</updated>
-      <workItem from="1608654976750" duration="17735000" />
+      <workItem from="1608654976750" duration="17987000" />
+      <workItem from="1608706570133" duration="3004000" />
     </task>
     <servers />
   </component>
@@ -89,17 +92,39 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="455" y="-905" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1608707088671">
+      <screen x="-279" y="-1080" width="2560" height="1040" />
+    </state>
+    <state x="455" y="-905" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/2281.-1593.1080.1880/-279.-1080.2560.1040@-279.-1080.2560.1040" timestamp="1608707088671" />
+    <state x="1071" y="-692" key="FileChooserDialogImpl" timestamp="1608707126322">
+      <screen x="-279" y="-1080" width="2560" height="1040" />
+    </state>
+    <state x="1071" y="-692" key="FileChooserDialogImpl/0.0.1920.1040/2281.-1593.1080.1880/-279.-1080.2560.1040@-279.-1080.2560.1040" timestamp="1608707126322" />
+    <state x="532" y="-915" key="SettingsEditor" timestamp="1608707103687">
+      <screen x="-279" y="-1080" width="2560" height="1040" />
+    </state>
+    <state x="532" y="-915" key="SettingsEditor/0.0.1920.1040/2281.-1593.1080.1880/-279.-1080.2560.1040@-279.-1080.2560.1040" timestamp="1608707103687" />
     <state x="676" y="-1253" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1608671974985">
       <screen x="-261" y="-1440" width="2560" height="1400" />
     </state>
     <state x="676" y="-1253" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040/-261.-1440.2560.1400/2299.-1085.1536.824@-261.-1440.2560.1400" timestamp="1608671974985" />
     <state x="703" y="139" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040/-261.-1440.2560.1400/2299.-1085.1536.824@0.0.1920.1040" timestamp="1608664816147" />
-    <state x="702" y="-1000" width="1215" height="823" key="find.popup" timestamp="1608685576421">
-      <screen x="-261" y="-1440" width="2560" height="1400" />
+    <state x="684" y="-753" width="1215" height="612" key="find.popup" timestamp="1608708695161">
+      <screen x="-279" y="-1080" width="2560" height="1040" />
     </state>
-    <state x="702" y="-1000" width="1215" height="823" key="find.popup/0.0.1920.1040/-261.-1440.2560.1400/2299.-1085.1536.824@-261.-1440.2560.1400" timestamp="1608685576421" />
+    <state x="702" y="-1000" width="1215" height="823" key="find.popup/0.0.1920.1040/-261.-1440.2560.1400/2299.-1085.1536.824@-261.-1440.2560.1400" timestamp="1608685865511" />
     <state x="517" y="428" width="912" height="612" key="find.popup/0.0.1920.1040/-261.-1440.2560.1400/2299.-1085.1536.824@0.0.1920.1040" timestamp="1608667610820" />
+    <state x="684" y="-753" width="1215" height="612" key="find.popup/0.0.1920.1040/2281.-1593.1080.1880/-279.-1080.2560.1040@-279.-1080.2560.1040" timestamp="1608708695161" />
+    <state x="1083" y="-589" key="scopes" timestamp="1608707029368">
+      <screen x="-279" y="-1080" width="2560" height="1040" />
+    </state>
+    <state x="1083" y="-589" key="scopes/0.0.1920.1040/2281.-1593.1080.1880/-279.-1080.2560.1040@-279.-1080.2560.1040" timestamp="1608707029368" />
+    <state x="664" y="-855" width="672" height="678" key="search.everywhere.popup" timestamp="1608708823556">
+      <screen x="-279" y="-1080" width="2560" height="1040" />
+    </state>
+    <state x="664" y="-855" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/2281.-1593.1080.1880/-279.-1080.2560.1040@-279.-1080.2560.1040" timestamp="1608708823556" />
   </component>
 </project>
