@@ -286,6 +286,7 @@ void GatewayControlTask::handleSnPublish(Event* ev, ClientNode* clnode, MQTTSnMe
 			string str;
 			mqMsg->setTopic(sPublish->getTopic(&str));
 		}
+		printf("Msg ID : %d\n", sPublish->getMsgId() );
 		if(sPublish->getMsgId()){
 			MQTTSnPubAck* sPuback = new MQTTSnPubAck();
 			sPuback->setMsgId(sPublish->getMsgId());
