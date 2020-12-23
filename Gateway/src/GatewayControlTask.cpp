@@ -278,7 +278,7 @@ void GatewayControlTask::handleSnPublish(Event* ev, ClientNode* clnode, MQTTSnMe
 
 	Topic* tp = clnode->getTopics()->getTopic(sPublish->getTopicId());
     printf("Flags : %d\n", (int)sPublish->getFlags());
-	if(tp || ((sPublish->getFlags() && MQTTSN_TOPIC_TYPE) == MQTTSN_TOPIC_TYPE_SHORT)){
+	if(tp || ((sPublish->getFlags() & MQTTSN_TOPIC_TYPE) == MQTTSN_TOPIC_TYPE_SHORT)){
         printf("PH: Topic Type Short\n");
 		if(tp){
 			mqMsg->setTopic(tp->getTopicName());
