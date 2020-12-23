@@ -345,7 +345,7 @@ void GatewayControlTask::handleSnSubscribe(Event* ev, ClientNode* clnode, MQTTSn
 	MQTTSnSubscribe* sSubscribe = new MQTTSnSubscribe();
 	MQTTSubscribe* subscribe = new MQTTSubscribe();
 	sSubscribe->absorb(msg);
-
+    printf("SUBS\n");
 	uint8_t topicIdType = sSubscribe->getFlags() & 0x03;
 
 	subscribe->setMessageId(sSubscribe->getMsgId());
@@ -361,9 +361,12 @@ void GatewayControlTask::handleSnSubscribe(Event* ev, ClientNode* clnode, MQTTSn
 	if(topicIdType != MQTTSN_FLAG_TOPICID_TYPE_RESV){
 		if(topicIdType == MQTTSN_FLAG_TOPICID_TYPE_PREDEFINED){
 			/*----- Predefined TopicId ------*/
+            printf("SUBS: TOPIC ID Type Predefined\n");
 			MQTTSnSubAck* sSuback = new MQTTSnSubAck();
 
 			if(sSubscribe->getMsgId()){       // MessageID
+			    printf("SUBACK 1\n");
+                printf("SUBS Msg Id: %d\n", (int) sSubscribe->getMsgId());
 				sSuback->setQos(sSubscribe->getQos());
 				sSuback->setTopicId(sSubscribe->getTopicId());
 				sSuback->setMsgId(sSubscribe->getMsgId());
@@ -384,7 +387,6 @@ void GatewayControlTask::handleSnSubscribe(Event* ev, ClientNode* clnode, MQTTSn
 			}
 
 			if(sSubscribe->getTopicId() == MQTTSN_TOPICID_PREDEFINED_TIME){
-
 				MQTTSnPublish* pub = new MQTTSnPublish();
 				pub->setTopicIdType(1);  // pre-defined
 				pub->setTopicId(MQTTSN_TOPICID_PREDEFINED_TIME);
@@ -416,6 +418,8 @@ void GatewayControlTask::handleSnSubscribe(Event* ev, ClientNode* clnode, MQTTSn
 
 			subscribe->setTopic(sSubscribe->getTopicName(), sSubscribe->getQos());
 			if(sSubscribe->getMsgId()){
+                printf("SUBACK 2\n");
+                printf("SUBS Msg Id: %d\n", (int) sSubscribe->getMsgId());
 				MQTTSnSubAck* sSuback = new MQTTSnSubAck();
 				sSuback->setMsgId(sSubscribe->getMsgId());
 				sSuback->setTopicId(tpId);
@@ -433,6 +437,8 @@ void GatewayControlTask::handleSnSubscribe(Event* ev, ClientNode* clnode, MQTTSn
 	}else{
 		/*-- Irregular TopicIdType --*/
 		if(sSubscribe->getMsgId()){
+            printf("SUBACK 3\n");
+            printf("SUBS Msg Id: %d\n", (int) sSubscribe->getMsgId());
 			MQTTSnSubAck* sSuback = new MQTTSnSubAck();
 			sSuback->setMsgId(sSubscribe->getMsgId());
 			sSuback->setTopicId(sSubscribe->getTopicId());
