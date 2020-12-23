@@ -59,7 +59,7 @@ ClientSendTask::~ClientSendTask(){
 void ClientSendTask::run(){
 	NETWORK_CONFIG config;
 #ifdef NETWORK_XBEE
-
+    std::cout << "ZigBee Send" << std::endl;
 	char param[TOMYFRAME_PARAM_MAX];
 	bool secure = true;
 
@@ -120,6 +120,7 @@ void ClientSendTask::run(){
 		Event* ev = _res->getClientSendQue()->wait();
 
 		if(ev->getEventType() == EtClientSend){
+            std::cout << "Client Send" << std::endl;
 			MQTTSnMessage msg = MQTTSnMessage();
 			ClientNode* clnode = ev->getClientNode();
 			msg.absorb( clnode->getClientSendMessage() );
@@ -127,6 +128,7 @@ void ClientSendTask::run(){
 			_network->unicast(clnode->getAddress64Ptr(), clnode->getAddress16(),
 					msg.getMessagePtr(), msg.getMessageLength());
 		}else if(ev->getEventType() == EtBroadcast){
+            std::cout << "Broad Casting" << std::endl;
 			MQTTSnMessage msg = MQTTSnMessage();
 			msg.absorb( ev->getMqttSnMessage() );
 			_network->broadcast(msg.getMessagePtr(), msg.getMessageLength());
